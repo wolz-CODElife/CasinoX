@@ -1,0 +1,60 @@
+
+.index {
+    padding: 5vh 5vw;
+}
+.index .board {
+    margin: 0px auto;
+    background-image: url('https://i.postimg.cc/QNfZRjjj/image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    min-height: 90vh;
+    color: #e4e3e3;
+    width: 100%;
+    max-width: 678px;
+    position: relative;
+}
+.board .title {
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    width: 100%;
+}
+.board .action {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.board .action a {
+    width: max-content;
+    margin: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    background: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px #e4e3e3;
+    color: #141414;
+    transition: transform ease 0.4s;
+}
+.board .action a:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 742px) {
+    .board .title {
+        top: 70px;
+    }
+    .board .action{
+        bottom: 30px;
+    }
+}
+@media screen and (max-width: 649px) {
+    .board .action {
+        bottom: 40px;
+    }
+}

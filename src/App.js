@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom' 
+import Games from './Pages/Games'
+import Index from './Pages/Index'
+import RPSgame from './Pages/RPSgame'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Index} />
+        <Route path="/games" component={Games} />
+        <Route path="/game/rps" component={RPSgame} />
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default App
