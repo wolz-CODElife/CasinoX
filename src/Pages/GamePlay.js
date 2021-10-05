@@ -44,12 +44,15 @@ const GamePlay = () => {
         <>
             <Nav pagetitle={game?.name} />
             <div className="game_screen">
-                <div className="playerslist">{players.map(player =>(
-                    <div className="player_card">
-                        <img src={player.image} alt="" />
-                        <h2>{ player.name }</h2>
-                    </div>
-                ))}</div>
+                <div className="playerslist">
+                    <h2>Players</h2>
+                    {players.map(player => (
+                        <div className="player_card">
+                            <img src={player.image} alt="" />
+                            <h2>{player.name} <span>{ player.score }</span></h2>
+                        </div>
+                    ))}
+                </div>
                 <div className="game_playing">
                     {
                         name === 'rps' ? <RPSgame />:

@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/RPSgame.css'
+import './RPSgame.css'
 
 const RPSgame = () => {
     return (
