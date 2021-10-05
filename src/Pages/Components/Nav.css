@@ -45,6 +45,9 @@
     text-decoration: none;
 }
 
-@media screen and (max-width) {
-    
+@media screen and (max-width: 526px) {
+    .popup {
+        right: 10px;
+        width: 70vw;
+    }
 }

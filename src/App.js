@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom' 
 import Games from './Pages/Games'
 import Index from './Pages/Index'
-import RPSgame from './Pages/RPSgame'
+import GamePlay from './Pages/GamePlay'
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Index} />
         <Route path="/games" component={Games} />
-        <Route path="/game/rps" component={RPSgame} />
+        <Route path="/game/:name" component={GamePlay} />
       </Switch>
     </Router>
   )
