@@ -1,0 +1,10 @@
+.game_board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    height: 100%;
+}
+.game_board img {
+    width: 80%;
+    max-width: 90px;
+}
