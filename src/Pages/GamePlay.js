@@ -1,10 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
+import { Link, useHistory } from 'react-router-dom'
 import Nav from './Components/Nav.js'
 import RPSgame from './Components/RPSgame'
 import './css/GamePlay.css'
 
 const GamePlay = () => {
+    const history = useHistory()
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
+    const [opponent, setOpponent] = useState(localStorage.getItem('opponent'))
+    useEffect(() => {
+        if (opponent !== 'computer') {
+            if (!user) {
+                history.push('/')
+            }
+        }
+    }, [user, opponent])
     const initialGameRounds = 3
     const { name } = useParams()
     const [game, setGame] = useState(
@@ -16,13 +27,13 @@ const GamePlay = () => {
     const [players, setPlayers] = useState([
         {
             id: 1,
-            name: 'me',
+            name: user?.name || 'me',
             image: 'https://i.postimg.cc/kG3v2r3C/image.png',
             score: 0
         },
         {
             id: 2,
-            name: 'opponent',
+            name: opponent,
             image: 'https://i.postimg.cc/cHDFCk14/image.png',
             score: 0
         }
@@ -84,7 +95,7 @@ const GamePlay = () => {
                             <h2>You tied</h2>
                         }
                         <div className="exit_button">
-                            <button>Exit</button>
+                            <Link to="/games">Exit</Link>
                         </div>
                     </div>
                 }

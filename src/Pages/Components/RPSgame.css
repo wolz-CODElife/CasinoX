@@ -8,3 +8,9 @@
     width: 80%;
     max-width: 90px;
 }
+
+@media screen and (max-width: 768px) {
+    .game_board {
+        grid-template-columns: 1fr;
+    }
+}

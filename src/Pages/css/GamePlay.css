@@ -3,6 +3,7 @@
     grid-template-columns: 1.5fr 3.5fr;
     margin: 0px 20px;
     grid-gap: 40px;
+    max-width: 90vw;
 }
 .game_screen > div {
     background: radial-gradient(100% 2631.09% at 0% 0%, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.558) 100%);
@@ -58,15 +59,38 @@
 }
 .game_screen .game_winner h2 {
     color: #ffffff;
+    margin-bottom: 20px;
 }
-.exit_button button{
+.exit_button a{
+    text-decoration: none;
     background: #ffffff;
     color: #000000;
     border: none;
     outline: none;
-    margin: 20px 0px;
+    margin: 50px 0px;
     font-size: 20px;
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+@media screen and (max-width:650px) {
+    .game_screen {
+        grid-template-columns: 1fr;
+    }
+    .game_screen > div {
+        height: max-content;
+    }
+    .game_screen .playerslist {
+        display: flex;
+        justify-content: space-between;
+    }
+    .game_screen .playerslist h2 {
+        display: none;
+    }
+}
+@media screen and (max-width: 510px) {
+    .game_screen .playerslist {
+        display: block;
+    }
 }
